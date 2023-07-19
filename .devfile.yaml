@@ -19,6 +19,12 @@ commands:
         kind: build
         isDefault: true
       component: tooling-container
+  - id: vim-install
+    exec:
+      commandLine: 'yum install vim'
+      group:
+        kind: build
+      component: tooling-container
 events:
   postStart:
-    - "oc-2install2"
+    - "vim-install"
