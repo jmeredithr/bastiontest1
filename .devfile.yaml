@@ -17,8 +17,23 @@ commands:
       workingDir: ${PROJECT_SOURCE}
       group:
         kind: build
-        isDefault: true
+        #isDefault: true
       component: tooling-container
+  - id: vim-install
+    exec:
+      commandLine: 'yum install vim'
+      group:
+        kind: build
+      component: tooling-container
+  - id: jr-custom-install
+    composite:
+      commands:
+        - oc-install
+        - vim-install
+      parallel: false
+      group:
+        kind: build
+        isDefault: true
 events:
   postStart:
-    - "oc-install"
+    - "jr-custom-install"
