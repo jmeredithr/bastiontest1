@@ -11,7 +11,7 @@ components:
       cpuLimit: 2000m
       args: ['tail', '-f', '/dev/null']
 commands:
-  - id: oc-2install2
+  - id: oc-install
     exec:
       commandLine: '/usr/local/bin/ansible-playbook ${PROJECT_SOURCE}/playbooks/install_oc.yml'
       workingDir: ${PROJECT_SOURCE}
@@ -27,4 +27,4 @@ commands:
       component: tooling-container
 events:
   postStart:
-    - "vim-install"
+    - "oc-install"
