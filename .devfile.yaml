@@ -1,10 +1,10 @@
 schemaVersion: 2.2.0
 metadata:
-  name: ansible-demo2
+  name: ansible-bastion-test.0.1
 components:
   - name: tooling-container
     container:
-      image: quay.io/mloriedo/ansible-creator-ee:latest
+      image: quay.io/jmeredit/bastiontest1:latest
       memoryRequest: 256M
       memoryLimit: 6Gi
       cpuRequest: 250m
